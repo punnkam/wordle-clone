@@ -12,5 +12,5 @@ cd wordle-clone
 Compile and run
 ```
 g++ -o main main.cpp; 
-./main;
+./main
 ```
