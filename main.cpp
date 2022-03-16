@@ -47,19 +47,23 @@ bool checkIfValid(string word, vector<string> words) {
 int main() {
 
     vector<string> words = getWordVector("valid_words.txt");
-    string wordle = words[getRandomNumber(0, words.size())];
+    vector<string> realWords = getWordVector("real_words.txt"); // "realistic" words taken from KleberPF on Github
+    string wordle = realWords[getRandomNumber(0, realWords.size())]; // use "realistic" wordle
     vector<char> correct;
     vector<char> current;
 
     for(int i=0; i<5; i++) 
         correct.push_back('*');
 
+    cout << endl;
     for(int i=0; i<5; i++) 
         cout << "_ ";
     cout << endl;
+    cout << endl;
 
     string word;
-    cout << "wordle is " << wordle << endl;
+    // Reveal wordle for testing
+    // cout << "wordle is " << wordle << endl; 
     for(int i=0; i<6; i++) {
 
         // When there are no entries
@@ -75,13 +79,19 @@ int main() {
                 }
             }
 
-            // Print out the word again
-            for(int k=0; k<current.size(); k++) {
+            for(int k=0; k<word.size(); k++) 
+                cout << word[k] << " ";
+
+            cout << endl;
+            
+            for(int k=0; k<current.size(); k++) 
                 cout << current[k] << " ";
-            }
+            
+            cout << endl;
             cout << endl;
 
             if(equal(current.begin(), current.begin()+5, correct.begin()))  {
+                cout << endl;
                 cout << "You found the wordle!!" << endl;
                 return 0;
             }
@@ -89,15 +99,19 @@ int main() {
         } 
 
        
-        cout << "Enter a word: " << endl;
+        cout << "Enter a word: ";
         cin >> word; 
+        cout << endl;
         while(!checkIfValid(word, words) || word.size() != 5) {
+            cout << endl;
             cout << "Not a word, enter a new word please" << endl;
-            cout << "Enter a word: " << endl;
+            cout << "Enter a word: ";
             cin >> word; 
+            cout << endl;
         }
     }
 
+    cout << endl;
     cout << "You failed to find the wordle!!" << endl;
     return 0;
 
