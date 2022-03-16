@@ -1,6 +1,8 @@
 # wordle-clone
 Refreshing my memory on C++ by building a terminal Wordle clone
 
+![Demo Gif](demo.gif)
+
 Use the commands below to play:
 
 Clone repo
