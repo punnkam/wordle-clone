@@ -1,2 +1,2 @@
 # wordle-clone
-Refreshing my C++ memory with a scrappy Wordle clone
+Refreshing my memory on C++ by building a terminal Wordle clone
