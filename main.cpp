@@ -56,6 +56,13 @@ int main() {
         correct.push_back('*');
 
     cout << endl;
+    cout << "You have 6 attemps to guess the world" << endl;
+    cout << endl;
+    cout << "X - the letter does not exist" << endl;
+    cout << "/ - the letter is in the incorrect position" << endl;
+    cout << "* - the letter is in the correct position" << endl;
+
+    cout << endl;
     for(int i=0; i<5; i++) 
         cout << "_ ";
     cout << endl;
@@ -99,13 +106,13 @@ int main() {
         } 
 
        
-        cout << "Enter a word: ";
+        cout << "#" << i+1 << " Enter a word: ";
         cin >> word; 
         cout << endl;
         while(!checkIfValid(word, words) || word.size() != 5) {
-            cout << endl;
             cout << "Not a word, enter a new word please" << endl;
-            cout << "Enter a word: ";
+            cout << endl;
+            cout << "#" << i+1 << " Enter a word: ";
             cin >> word; 
             cout << endl;
         }
@@ -113,6 +120,7 @@ int main() {
 
     cout << endl;
     cout << "You failed to find the wordle!!" << endl;
+    cout << "The word was " << wordle << endl;
     return 0;
 
 
